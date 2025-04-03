@@ -3,7 +3,7 @@
 
 @layer utilities {
     .bg-purple-gradient {
-      background: linear-gradient(to right, #0d0124, #28004b);
+      background: linear-gradient(to right, #0d0124, #000127);
     }
 }
 
