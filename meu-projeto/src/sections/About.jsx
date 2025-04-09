@@ -1,7 +1,7 @@
 function About() {
 
     return (
-        <div className="h-[80vh] text-amber-50 flex flex-col items-center px-6">
+        <div id="about" className="h-[80vh] text-amber-50 flex flex-col items-center px-6">
             <h1 className="text-5xl font-extrabold text-amber-400 text-center mb-12 tracking-widest uppercase drop-shadow-[0_0_10px_rgba(251,191,36,0.6)]">
                 Sobre nós
             </h1>

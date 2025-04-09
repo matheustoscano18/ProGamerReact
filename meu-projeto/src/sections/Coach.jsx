@@ -2,7 +2,7 @@ import AboutButton from "../components/aboutButton";
 
 function Coach() {
   return (
-    <div className="min-h-screen">
+    <div id="coach" className="min-h-screen">
       <h1 className="text-5xl font-extrabold text-amber-400 text-center p-5 tracking-widest uppercase drop-shadow-[0_0_10px_rgba(251,191,36,0.6)]">
         Coach
       </h1>
@@ -28,7 +28,7 @@ function Coach() {
               </p>
             </div>
             <div className="mt-auto pt-4">
-              <AboutButton />
+              <AboutButton route="/lol" />
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@ function Coach() {
               </p>
             </div>
             <div className="mt-auto pt-4">
-              <AboutButton />
+              <AboutButton route="/valorant"/>
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ function Coach() {
               </p>
             </div>
             <div className="mt-auto pt-4">
-              <AboutButton />
+              <AboutButton route="/fortnite"/>
             </div>
           </div>
         </div>
@@ -100,7 +100,7 @@ function Coach() {
               </p>
             </div>
             <div className="mt-auto pt-4">
-              <AboutButton />
+              <AboutButton route="/cs"/>
             </div>
           </div>
         </div>
@@ -124,7 +124,7 @@ function Coach() {
               </p>
             </div>
             <div className="mt-auto pt-4">
-              <AboutButton />
+              <AboutButton route="/dota"/>
             </div>
           </div>
         </div>
