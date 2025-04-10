@@ -30,7 +30,7 @@ function Home() {
               <p>Junte-se a nós e comece a dominar o jogo.</p>
             </div>
             <div className="p-5">
-              <ButtonCta onClick={scrollToCoach}/>
+              <ButtonCta onClick={scrollToCoach} />
             </div>
           </div>
         </div>
