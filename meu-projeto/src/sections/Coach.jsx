@@ -6,7 +6,7 @@ function Coach() {
       <h1 className="text-5xl font-extrabold text-amber-400 text-center p-5 tracking-widest uppercase drop-shadow-[0_0_10px_rgba(251,191,36,0.6)]">
         Coach
       </h1>
-      
+
       <div className="flex justify-around gap-5 p-5">
         <div
           id="lol"
@@ -28,7 +28,7 @@ function Coach() {
               </p>
             </div>
             <div className="mt-auto pt-4">
-              <AboutButton route="/lol" />
+              <AboutButton game="lol" />
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@ function Coach() {
               </p>
             </div>
             <div className="mt-auto pt-4">
-              <AboutButton route="/valorant"/>
+              <AboutButton game="valorant" />
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ function Coach() {
               </p>
             </div>
             <div className="mt-auto pt-4">
-              <AboutButton route="/fortnite"/>
+              <AboutButton game="fortnite" />
             </div>
           </div>
         </div>
@@ -100,7 +100,7 @@ function Coach() {
               </p>
             </div>
             <div className="mt-auto pt-4">
-              <AboutButton route="/cs"/>
+              <AboutButton game="cs" />
             </div>
           </div>
         </div>
@@ -124,7 +124,7 @@ function Coach() {
               </p>
             </div>
             <div className="mt-auto pt-4">
-              <AboutButton route="/dota"/>
+              <AboutButton game="dota" />
             </div>
           </div>
         </div>

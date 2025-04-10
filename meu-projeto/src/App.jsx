@@ -8,11 +8,7 @@ import Header from "./sections/Header.jsx";
 import About from "./sections/About.jsx";
 import Footer from "./sections/Footer.jsx";
 
-import LolPage from "./pages/LolPage.jsx";
-import ValorantPage from "./pages/ValorantPage.jsx";
-import FortnitePage from "./pages/FortnitePage.jsx";
-import CsPage from "./pages/CsPage.jsx";
-import DotaPage from "./pages/DotaPage.jsx";
+import GameCoachPage from "./pages/GameCoachPage.jsx";
 
 function App() {
   const location = useLocation();
@@ -44,11 +40,7 @@ function App() {
               </>
             }
           />
-          <Route path="/lol" element={<LolPage />} />
-          <Route path="/valorant" element={<ValorantPage />} />
-          <Route path="/fortnite" element={<FortnitePage />} />
-          <Route path="/cs" element={<CsPage />} />
-          <Route path="/dota" element={<DotaPage />} />
+          <Route path="/coach/:game" element={<GameCoachPage />} />
         </Routes>
       </main>
       <Footer />
