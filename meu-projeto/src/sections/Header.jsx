@@ -1,19 +1,41 @@
 import { useNavigate, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { auth } from "../firebase/config";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+
 import SignupButton from "../components/SignupButton";
+import SigninButton from "../components/SigninButton";
 
 function Header() {
   const navigate = useNavigate();
   const location = useLocation();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      setUser(firebaseUser);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      alert("Logout realizado com sucesso!");
+      navigate("/");
+    } catch (error) {
+      console.error("Erro ao sair:", error.message);
+    }
+  };
 
   const scrollToSection = (sectionId) => {
-    // Se estiver na página inicial
     if (location.pathname === "/") {
       const section = document.getElementById(sectionId);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      // Redireciona para home, e scrolla depois
       navigate("/", { state: { scrollTo: sectionId } });
     }
   };
@@ -34,6 +56,7 @@ function Header() {
             </span>
           </span>
         </a>
+
         <nav className="flex gap-8 md:gap-12 mx-auto">
           <button
             onClick={() => scrollToSection("home")}
@@ -60,8 +83,21 @@ function Header() {
             Contato
           </button>
         </nav>
-        <div className="ml-auto">
-          <SignupButton />
+
+        <div className="ml-auto flex flex-row gap-5">
+          {user ? (
+            <button
+              onClick={handleLogout}
+              className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded transition font-semibold cursor-pointer"
+            >
+              Logout
+            </button>
+          ) : (
+            <>
+              <SigninButton />
+              <SignupButton />
+            </>
+          )}
         </div>
       </header>
     </div>

@@ -9,7 +9,10 @@ function Home() {
   };
 
   return (
-    <div id="home" className="min-h-screen bg-no-repeat bg-cover bg-center">
+    <div
+      id="home"
+      className="min-h-screen bg-no-repeat bg-cover bg-center px-4"
+    >
       <div className="flex flex-row justify-between items-center pt-[20vh] px-5 gap-10">
         <div className="relative p-[2px] min-w-[300px] rounded-lg bg-gradient-to-r from-purple-500 via-pink-500 to-teal-500 bg-[length:200%_auto] animate-gradient-border w-auto max-w-4xl mx-5">
           <div className="bg-gray-900 rounded-lg p-5">
@@ -34,7 +37,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="flex-1 max-w-[800px] w-full">
+        <div className="hidden xl:block w-full max-w-[800px]">
           <img
             src="./src/assets/controller.png"
             alt="game controller"

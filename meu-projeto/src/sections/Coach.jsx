@@ -1,4 +1,4 @@
-import AboutButton from "../components/aboutButton";
+import AboutButton from "../components/AboutButton";
 
 function Coach() {
   return (

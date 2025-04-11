@@ -9,6 +9,8 @@ import About from "./sections/About.jsx";
 import Footer from "./sections/Footer.jsx";
 
 import GameCoachPage from "./pages/GameCoachPage.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
+import SignupPage from "./pages/SignupPage.jsx";
 
 function App() {
   const location = useLocation();
@@ -41,6 +43,8 @@ function App() {
             }
           />
           <Route path="/coach/:game" element={<GameCoachPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/cadastro" element={<SignupPage />} />
         </Routes>
       </main>
       <Footer />
