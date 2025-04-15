@@ -4,7 +4,7 @@ function SignupButton() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex gap-3">
+    <div>
       <div id="signup">
         <button
           onClick={() => navigate("/cadastro")}

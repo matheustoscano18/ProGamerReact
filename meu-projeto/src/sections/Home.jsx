@@ -13,8 +13,8 @@ function Home() {
       id="home"
       className="h-[80vh] bg-no-repeat bg-cover bg-center px-4"
     >
-      <div className="flex flex-col xl:flex-row justify-between items-center pt-20 gap-10 max-w-7xl mx-auto">
-        <div className="relative p-[2px] w-full xl:max-w-3xl rounded-lg bg-gradient-to-r from-purple-500 via-pink-500 to-teal-500 bg-[length:200%_auto] animate-gradient-border">
+      <div className="flex flex-col md:flex-row justify-between items-center pt-20 gap-10 max-w-7xl mx-auto">
+        <div className="relative p-[2px] w-full xl:max-w-[600px] rounded-lg bg-gradient-to-r from-purple-500 via-pink-500 to-teal-500 bg-[length:200%_auto] animate-gradient-border">
           <div className="bg-gray-900 rounded-lg px-5 py-8 sm:p-8">
             <div className="text-amber-50 font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl tracking-wide mb-4">
               <h1>
@@ -36,7 +36,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="hidden xl:block w-full max-w-[600px]">
+        <div className="hidden md:block w-full max-w-[600px]">
           <img
             src="./src/assets/controller.png"
             alt="game controller"

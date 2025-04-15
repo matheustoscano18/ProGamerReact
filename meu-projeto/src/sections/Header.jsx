@@ -45,7 +45,7 @@ function Header() {
 
   return (
     <div className="font-roboto font-semibold relative z-50">
-      <header className="w-full h-[10vh] text-amber-50 flex items-center justify-between px-6 md:px-8 relative">
+      <header className="w-full h-[10vh] text-amber-50 flex items-center justify-between px-6 md:px-8 relative overflow-visible">
         <a href="#" className="flex items-center">
           <img
             src="./src/assets/logo.svg"
@@ -60,8 +60,8 @@ function Header() {
           </span>
         </a>
 
-        <nav className="hidden md:flex gap-8 mx-auto max-w-[500px] w-full justify-center">
-          {["home", "coach", "about", "contact"].map((item) => (
+        <nav className="hidden md:flex gap-8 justify-center absolute left-1/2 -translate-x-1/2 z-20">
+          {["home", "coach", "sobre", "contato"].map((item) => (
             <button
               key={item}
               onClick={() => scrollToSection(item)}
@@ -72,7 +72,7 @@ function Header() {
           ))}
         </nav>
 
-        <div className="hidden md:flex flex-row gap-5">
+        <div className="hidden md:flex flex-row gap-5 z-10">
           {user ? (
             <button
               onClick={handleLogout}
@@ -82,8 +82,10 @@ function Header() {
             </button>
           ) : (
             <>
-              <SigninButton />
-              <SignupButton />
+              <div className="flex flex-row gap-2 p-5 box-content">
+                <SigninButton />
+                <SignupButton />
+              </div>
             </>
           )}
         </div>
