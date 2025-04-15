@@ -2,14 +2,16 @@ function About() {
   return (
     <div
       id="about"
-      className="h-[80vh] text-amber-50 flex flex-col items-center px-6"
+      className="min-h-screen xl:h-[80vh] text-amber-50 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-12 py-10 xl:py-0"
     >
-      <h1 className="text-5xl font-extrabold text-amber-400 text-center mb-12 tracking-widest uppercase drop-shadow-[0_0_10px_rgba(251,191,36,0.6)]">
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-amber-400 text-center mb-6 sm:mb-10 tracking-widest uppercase drop-shadow-[0_0_10px_rgba(251,191,36,0.6)]">
         Sobre nós
       </h1>
-      <div className="w-48 h-1 bg-gradient-to-r from-amber-400 via-fuchsia-500 to-emerald-400 rounded-full my-6"></div>
-      <div className="max-w-5xl space-y-10 text-lg leading-loose text-amber-100 text-center">
-        <p className="text">
+
+      <div className="w-32 sm:w-48 h-1 bg-gradient-to-r from-amber-400 via-fuchsia-500 to-emerald-400 rounded-full my-4 sm:my-6"></div>
+
+      <div className="max-w-3xl sm:max-w-4xl xl:max-w-5xl space-y-6 sm:space-y-8 text-base sm:text-lg leading-relaxed sm:leading-loose text-amber-100 text-center px-2 sm:px-4">
+        <p>
           A <span className="text-fuchsia-500 font-semibold">Pro Gamer</span>{" "}
           nasceu da paixão pelos jogos e da vontade de elevar o cenário
           competitivo a um novo patamar. Somos uma equipe formada por coaches

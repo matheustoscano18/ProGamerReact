@@ -32,6 +32,12 @@ const coachData = {
     price: "R$ 59,90",
     duration: "1 hora",
   },
+  overwatch: {
+    title: "Overwatch",
+    description: "Aprenda a jogar Overwatch com especialistas em estratégias e macrojogo.",
+    price: "R$ 49,90",
+    duration: "1 hora",
+  },
 };
 
 function GameCoachPage() {

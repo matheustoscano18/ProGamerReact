@@ -5,11 +5,13 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 
 import SignupButton from "../components/SignupButton";
 import SigninButton from "../components/SigninButton";
+import { Menu, X } from "lucide-react";
 
 function Header() {
   const navigate = useNavigate();
   const location = useLocation();
   const [user, setUser] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
@@ -34,6 +36,7 @@ function Header() {
       const section = document.getElementById(sectionId);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
+        setIsMenuOpen(false);
       }
     } else {
       navigate("/", { state: { scrollTo: sectionId } });
@@ -41,15 +44,15 @@ function Header() {
   };
 
   return (
-    <div className="font-roboto font-semibold">
-      <header className="w-full h-[10vh] text-amber-50 flex justify-between items-center px-8">
-        <a href="#" className="mr-auto group relative flex items-center">
+    <div className="font-roboto font-semibold relative z-50">
+      <header className="w-full h-[10vh] text-amber-50 flex items-center justify-between px-6 md:px-8 relative">
+        <a href="#" className="flex items-center">
           <img
             src="./src/assets/logo.svg"
             alt="logo"
-            className="h-20 w-20 mr-auto transition-transform duration-300 group-hover:scale-110"
+            className="h-16 w-16 transition-transform duration-300 group-hover:scale-110"
           />
-          <span className="absolute left-full ml-2 opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300 text-xl font-bold text-amber-50 whitespace-nowrap flex gap-x-1">
+          <span className="hidden md:flex ml-2 text-xl font-bold text-amber-50 whitespace-nowrap gap-x-1">
             <span className="text-amber-50">PRO</span>
             <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text animate-gradient-x">
               GAMER
@@ -57,34 +60,19 @@ function Header() {
           </span>
         </a>
 
-        <nav className="flex gap-8 md:gap-12 mx-auto">
-          <button
-            onClick={() => scrollToSection("home")}
-            className="hover:text-fuchsia-300 transition-colors px-2 py-1 cursor-pointer"
-          >
-            Home
-          </button>
-          <button
-            onClick={() => scrollToSection("coach")}
-            className="hover:text-fuchsia-300 transition-colors px-2 py-1 cursor-pointer"
-          >
-            Coach
-          </button>
-          <button
-            onClick={() => scrollToSection("about")}
-            className="hover:text-fuchsia-300 transition-colors px-2 py-1 cursor-pointer"
-          >
-            Sobre
-          </button>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="hover:text-fuchsia-300 transition-colors px-2 py-1 cursor-pointer"
-          >
-            Contato
-          </button>
+        <nav className="hidden md:flex gap-8 mx-auto max-w-[500px] w-full justify-center">
+          {["home", "coach", "about", "contact"].map((item) => (
+            <button
+              key={item}
+              onClick={() => scrollToSection(item)}
+              className="hover:text-fuchsia-300 transition-colors px-2 py-1 cursor-pointer capitalize"
+            >
+              {item}
+            </button>
+          ))}
         </nav>
 
-        <div className="ml-auto flex flex-row gap-5">
+        <div className="hidden md:flex flex-row gap-5">
           {user ? (
             <button
               onClick={handleLogout}
@@ -99,7 +87,41 @@ function Header() {
             </>
           )}
         </div>
+
+        <div className="md:hidden">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </header>
+
+      {isMenuOpen && (
+        <div className="md:hidden flex flex-col items-center gap-4 bg-gray-900 py-4 text-amber-50 w-full absolute top-[10vh] left-0 z-40 shadow-lg">
+          {["home", "coach", "about", "contact"].map((item) => (
+            <button
+              key={item}
+              onClick={() => scrollToSection(item)}
+              className="hover:text-fuchsia-300 transition-colors px-2 py-1 capitalize"
+            >
+              {item}
+            </button>
+          ))}
+
+          {user ? (
+            <button
+              onClick={handleLogout}
+              className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded transition font-semibold cursor-pointer"
+            >
+              Logout
+            </button>
+          ) : (
+            <div className="flex flex-col gap-2">
+              <SigninButton />
+              <SignupButton />
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
