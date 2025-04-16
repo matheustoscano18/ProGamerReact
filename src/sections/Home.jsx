@@ -1,5 +1,4 @@
 import ButtonCta from "../components/CtaButton";
-import Controller from "../assets/controller.png";
 
 function Home() {
   const scrollToCoach = () => {
@@ -39,7 +38,7 @@ function Home() {
 
         <div className="hidden md:block w-full max-w-[600px]">
           <img
-            src={Controller}
+            src="/assets/controller.png"
             alt="game controller"
             className="w-full h-auto object-contain rotate-12 xl:rotate-45"
           />

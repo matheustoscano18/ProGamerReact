@@ -1,10 +1,4 @@
 import AboutButton from "../components/AboutButton";
-import logoLOL from "../assets/logoLOL.png";
-import logoValorant from "../assets/logovalorant.png";
-import logoFortnite from "../assets/logofortnite.png";
-import logoCS from "../assets/logoCS.png";
-import logoDota2 from "../assets/logodota2.png";
-import logoOverwatch from "../assets/logooverwatch.png";
 
 function Coach() {
   return (
@@ -19,42 +13,42 @@ function Coach() {
             id: "lol",
             title: "League of Legends",
             desc: "Aprenda mecânicas avançadas, macrojogo e controle de visão com coaches experientes. Suba de elo com consistência!",
-            img: logoLOL,
+            img: "/assets/logoLOL.png",
             game: "lol",
           },
           {
             id: "valorant",
             title: "Valorant",
             desc: "Melhore a sua mira, posicionamento e tomada de decisão com treinos personalizados. Seja o MVP da sua equipe!",
-            img: logoValorant,
+            img: "/assets/logovalorant.png",
             game: "valorant",
           },
           {
             id: "fortnite",
             title: "Fortnite",
             desc: "Treinamento focado em construção, edição e estratégia para dominar as partidas e vencer com estilo.",
-            img: logoFortnite,
+            img: "/assets/logofortnite.png",
             game: "fortnite",
           },
           {
             id: "cs",
             title: "Counter Strike",
             desc: "Aprenda táticas, movimentação e controle de spray com especialistas em CS. Evolua seu jogo e suba de patente!",
-            img: logoCS,
+            img: "/assets/logoCS.png",
             game: "cs",
           },
           {
             id: "dota",
             title: "Dota 2",
             desc: "Entenda rotações, farm eficiente, pick ideal e trabalho em equipe com quem entende do meta competitivo.",
-            img: logoDota2,
+            img: "/assets/logodota2.png",
             game: "dota",
           },
           {
             id: "overwatch",
             title: "Overwatch",
             desc: "Aprenda a jogar Overwatch com especialistas em estratégias e macrojogo. Domine o campo de batalha e conquiste o controle!",
-            img: logoOverwatch,
+            img: "/assets/logooverwatch.png",
             game: "overwatch",
           }
         ].map((coach) => (
