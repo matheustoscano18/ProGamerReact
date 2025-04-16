@@ -6,6 +6,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import SignupButton from "../components/SignupButton";
 import SigninButton from "../components/SigninButton";
 import { Menu, X } from "lucide-react";
+import Logo from "../components/Logo";
 
 function Header() {
   const navigate = useNavigate();
@@ -52,7 +53,7 @@ function Header() {
           className="flex items-center"
         >
           <img
-            src="./src/assets/logo.svg"
+            src="/logo.svg"
             alt="logo"
             className="h-16 w-16 transition-transform duration-300 group-hover:scale-110"
           />
