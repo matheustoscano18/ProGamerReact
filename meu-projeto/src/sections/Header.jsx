@@ -1,4 +1,4 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { auth } from "../firebase/config";
 import { onAuthStateChanged, signOut } from "firebase/auth";
@@ -46,21 +46,27 @@ function Header() {
   return (
     <div className="font-roboto font-semibold relative z-50">
       <header className="w-full h-[10vh] text-amber-50 flex items-center justify-between px-6 md:px-8 relative overflow-visible">
-        <a href="#" className="flex items-center">
+        <Link 
+          to="/" 
+          onClick={() => scrollToSection("home")} 
+          className="flex items-center"
+        >
           <img
             src="./src/assets/logo.svg"
             alt="logo"
             className="h-16 w-16 transition-transform duration-300 group-hover:scale-110"
           />
-          <span className="hidden md:flex ml-2 text-xl font-bold text-amber-50 whitespace-nowrap gap-x-1">
-            <span className="text-amber-50">PRO</span>
-            <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text animate-gradient-x">
+          <span className="hidden md:flex ml-2 text-lg font-bold text-amber-50 whitespace-nowrap gap-x-1">
+            <span className="text-amber-50 text-xl md:text-lg sm:text-base">
+              PRO
+            </span>
+            <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text text-xl md:text-lg sm:text-base whitespace-nowrap animate-gradient-border bg-[length:200%_200%]">
               GAMER
             </span>
           </span>
-        </a>
+        </Link>
 
-        <nav className="hidden md:flex gap-8 justify-center absolute left-1/2 -translate-x-1/2 z-20">
+        <nav className="hidden md:flex gap-8 sm:gap-4 text-lg sm:text-sm justify-center absolute left-1/2 -translate-x-1/2 z-20">
           {["home", "coach", "sobre", "contato"].map((item) => (
             <button
               key={item}
@@ -72,7 +78,7 @@ function Header() {
           ))}
         </nav>
 
-        <div className="hidden md:flex flex-row gap-5 z-10">
+        <div className="hidden md:flex flex-row gap-5 sm:gap-2 z-10 text-md sm:text-xs">
           {user ? (
             <button
               onClick={handleLogout}
@@ -82,7 +88,7 @@ function Header() {
             </button>
           ) : (
             <>
-              <div className="flex flex-row gap-2 p-5 box-content">
+              <div className="flex flex-row gap-2 px-2 sm:px-1 py-2 box-content">
                 <SigninButton />
                 <SignupButton />
               </div>
@@ -117,7 +123,7 @@ function Header() {
               Logout
             </button>
           ) : (
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-row gap-2">
               <SigninButton />
               <SignupButton />
             </div>

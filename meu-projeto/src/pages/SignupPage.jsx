@@ -11,30 +11,29 @@ function SignupPage() {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       setMessage("Cadastro realizado com sucesso!");
-      setTimeout(() => {
-        navigate("/");
-      }, 2000);
+      setTimeout(() => navigate("/"), 2000);
     } catch (error) {
       setMessage("Erro ao cadastrar: " + error.message);
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-950 text-white px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-950 text-white px-4 py-8">
       <form
         onSubmit={handleSignup}
-        className="bg-gray-800 p-8 rounded-lg shadow-md w-full max-w-md"
+        className="bg-gray-800 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-md xl:max-w-md p-6 sm:p-8 rounded-2xl shadow-lg space-y-5"
       >
-        <h2 className="text-3xl font-bold mb-6 text-center">Cadastrar</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center">
+          Cadastrar
+        </h2>
 
         <input
           type="email"
           placeholder="Email"
-          className="w-full p-3 rounded bg-gray-700 mb-4 text-white"
+          className="w-full p-3 rounded bg-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -43,7 +42,7 @@ function SignupPage() {
         <input
           type="password"
           placeholder="Senha"
-          className="w-full p-3 rounded bg-gray-700 mb-4 text-white"
+          className="w-full p-3 rounded bg-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
@@ -51,13 +50,19 @@ function SignupPage() {
 
         <button
           type="submit"
-          className="w-full bg-purple-600 hover:bg-purple-700 transition-colors p-3 rounded font-semibold cursor-pointer"
+          className="w-full bg-purple-600 hover:bg-purple-700 transition-colors p-3 rounded font-semibold"
         >
           Cadastrar
         </button>
 
         {message && (
-          <p className="text-center mt-4 text-sm text-green-400">{message}</p>
+          <p
+            className={`text-center mt-2 text-sm ${
+              message.includes("sucesso") ? "text-green-400 animate-pulse" : "text-red-400"
+            }`}
+          >
+            {message}
+          </p>
         )}
       </form>
     </div>
@@ -65,3 +70,4 @@ function SignupPage() {
 }
 
 export default SignupPage;
+
