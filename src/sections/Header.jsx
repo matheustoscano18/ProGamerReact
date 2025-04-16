@@ -53,7 +53,7 @@ function Header() {
           className="flex items-center"
         >
           <img
-            src="/logo.svg"
+            src={Logo}
             alt="logo"
             className="h-16 w-16 transition-transform duration-300 group-hover:scale-110"
           />
