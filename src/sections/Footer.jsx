@@ -1,5 +1,3 @@
-import Logo from "../assets/logo.svg";
-
 function Footer() {
   return (
     <div id="contact">
@@ -7,7 +5,7 @@ function Footer() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-10 sm:gap-8">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <img
-              src={Logo}
+              src="/assets/logo.png"
               alt="Pro Gamer Logo"
               className="w-14 h-14 sm:w-16 sm:h-16 mb-2"
             />
