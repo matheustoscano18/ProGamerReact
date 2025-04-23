@@ -50,7 +50,7 @@ function Coach() {
             desc: "Aprenda a jogar Overwatch com especialistas em estratégias e macrojogo. Domine o campo de batalha e conquiste o controle!",
             img: "/assets/logooverwatch.png",
             game: "overwatch",
-          }
+          },
         ].map((coach) => (
           <div
             key={coach.id}

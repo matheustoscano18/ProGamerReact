@@ -9,10 +9,7 @@ function Home() {
   };
 
   return (
-    <div
-      id="home"
-      className="h-[80vh] bg-no-repeat bg-cover bg-center px-4"
-    >
+    <div id="home" className="h-[80vh] bg-no-repeat bg-cover bg-center px-4">
       <div className="flex flex-col md:flex-row justify-between items-center pt-20 gap-10 max-w-7xl mx-auto">
         <div className="relative p-[2px] w-full xl:max-w-[600px] rounded-lg bg-gradient-to-r from-purple-500 via-pink-500 to-teal-500 bg-[length:200%_auto] animate-gradient-border">
           <div className="bg-gray-900 rounded-lg px-5 py-8 sm:p-8">

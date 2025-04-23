@@ -46,9 +46,9 @@ function Header() {
   return (
     <div className="font-roboto font-semibold relative z-50">
       <header className="w-full h-[10vh] text-amber-50 flex items-center justify-between px-6 md:px-8 relative overflow-visible">
-        <Link 
-          to="/" 
-          onClick={() => scrollToSection("home")} 
+        <Link
+          to="/"
+          onClick={() => scrollToSection("home")}
           className="flex items-center"
         >
           <img
