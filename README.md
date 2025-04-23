@@ -2,8 +2,6 @@
 
 Plataforma web para conectar jogadores com coaches especializados nos principais jogos competitivos. Aprimore suas habilidades, domine estratégias e leve sua gameplay ao próximo nível com treinos personalizados.
 
-![Pro Gamer Banner](public/assets/banner.png)
-
 ## 🚀 Tecnologias Utilizadas
 
 - ⚛️ **React** – Biblioteca JavaScript para interfaces modernas e reativas
