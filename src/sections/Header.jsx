@@ -103,7 +103,7 @@ function Header() {
 
       {isMenuOpen && (
         <div className="md:hidden flex flex-col items-center gap-4 bg-gray-900 py-4 text-amber-50 w-full absolute top-[10vh] left-0 z-40 shadow-lg">
-          {["home", "coach", "about", "contact"].map((item) => (
+          {["home", "coach", "sobre", "contato"].map((item) => (
             <button
               key={item}
               onClick={() => scrollToSection(item)}
