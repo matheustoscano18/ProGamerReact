@@ -50,7 +50,7 @@ function SignupPage() {
 
         <button
           type="submit"
-          className="w-full bg-purple-600 hover:bg-purple-700 transition-colors p-3 rounded font-semibold"
+          className="w-full bg-purple-600 hover:bg-purple-700 transition-colors p-3 rounded font-semibold cursor-pointer"
         >
           Cadastrar
         </button>

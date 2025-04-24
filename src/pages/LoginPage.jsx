@@ -48,7 +48,7 @@ function LoginPage() {
 
         <button
           type="submit"
-          className="bg-purple-600 hover:bg-purple-700 w-full p-3 rounded font-semibold transition-colors"
+          className="bg-purple-600 hover:bg-purple-700 w-full p-3 rounded font-semibold transition-colors cursor-pointer"
         >
           Entrar
         </button>
