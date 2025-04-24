@@ -2,8 +2,6 @@
 
 Plataforma web para conectar jogadores com coaches especializados nos principais jogos competitivos. Aprimore suas habilidades, domine estratégias e leve sua gameplay ao próximo nível com treinos personalizados.
 
-![Pro Gamer Banner](public/assets/banner.png)
-
 ## 🚀 Tecnologias Utilizadas
 
 - ⚛️ **React** – Biblioteca JavaScript para interfaces modernas e reativas
@@ -40,3 +38,7 @@ Plataforma web para conectar jogadores com coaches especializados nos principais
 ├── tailwind.config.js
 ├── vite.config.js
 └── README.md
+
+```
+
+OBS: é necessário criar uma pasta para o firebase e colocar a sua api key para que o site funcione corretamente
